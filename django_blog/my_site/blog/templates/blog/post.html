@@ -1,0 +1,11 @@
+{% load static %}
+<div class="card">
+    <img src="{% static 'blog/images/'|add:post.image %}" alt="{{ post.title }}" class="card-image">
+    <h3>{{ post.title }}</h3>
+    <p>Algunos ejemplos rápidos de texto para trobar la etiqueta de carta y crear la lista de contenidos de la tarjeta.</p>
+    {% if post.slug %}
+        <a href="{% url 'posts-detail-page' post.slug %}" class="btn">Leer más</a>
+    {% else %}
+        <a href="{% url 'posts-detail-page' 'no-slug' %}" class="btn">Leer más</a>
+    {% endif %}
+</div>

@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="welcome-section">
+    <h2 id="welcome-h2-table">Lista de Autores</h2>
+</div>
+<section class="posts-grid table-1">
+    <div class="table-authors">
+        <table class="author-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th></th> <!-- Column for the button -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for author in authors %}
+                <tr>
+                    <td>{{ author.first_name }}</td>
+                    <td>{{ author.last_name }}</td>
+                    <td>
+                        <a href="{% url 'author-detail-page' author.id %}" class="btn">Saber +</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

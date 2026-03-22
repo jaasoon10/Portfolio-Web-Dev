@@ -1,0 +1,483 @@
+/* Restablecimiento de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuente global */
+body {
+    font-family: 'Roboto', sans-serif; /* Aplicar Roboto a toda la página */
+}
+
+/* Banner */
+#banner {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Altura del banner */
+    overflow: hidden;
+    margin: 0; /* Eliminar margen */
+    padding: 0; /* Eliminar padding */
+}
+
+#banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+    margin: 0; /* Eliminar margen */
+    padding: 0; /* Eliminar padding */
+}
+
+/* Título principal */
+#main-title {
+    text-align: center;
+    padding: 20px;
+}
+
+#main-title h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+#main-title p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Cabecera */
+header {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navegación */
+nav {
+    background-color: #6f6b6f;
+    color: #f9f9f9;
+    padding: 10px;
+    text-align: left;
+}
+
+nav a {
+    color: #f9f9f9; /* Texto blanco */
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 8px 12px; /* Añadir padding para hacer los enlaces más grandes y fáciles de clicar */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+nav a:hover {
+    background-color: #5a565a; /* Cambiar el fondo al pasar el ratón */
+    color: #fff; /* Mantener el texto blanco */
+    text-decoration: none; /* Evitar subrayado */
+}
+
+/* Sección de bienvenida */
+.welcome-section {
+    background-color: #fff;
+    padding: 0px;
+    margin: 5px 0;
+}
+
+.welcome-section-2 {
+    text-align: center;
+}
+
+#dev-chronicles {
+    text-decoration: underline;
+}
+
+#last-h2 #llista-h2 #h2-detail {
+    text-align: center;
+}
+
+#h2-detail, #h2-detail-2, #h2-detail-3 {
+    margin-left: 100px;
+}
+
+/* Sección de publicaciones recientes */
+.recent-posts {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 5px; /* Agregar margen superior para separar del contenido anterior */
+}
+
+.recent-posts h2 {
+    margin-bottom: 20px;
+}
+
+/* Estilos para los posts */
+.posts-grid .post-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Grid responsivo */
+    gap: 20px; /* Espacio entre posts */
+    max-width: 1200px;
+    justify-content: center; /* Centrar posts horizontalmente */
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+#welcome-h2-table {
+    margin-left: 200px;
+}
+
+.posts-grid .table-authors {
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+/* Estilos para los posts recientes */
+.recent-posts .post-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card .btn {
+    background-color: #6f6b6f;
+    color: #f9f9f9;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.card .btn:hover {
+    background-color: #5a565a;
+}
+
+.card:hover {
+    transform: scale(1.02); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Título de la tarjeta */
+.card h3 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Texto de la tarjeta */
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Centrar el contenido */
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto */
+    max-width: 800px; /* Limita el ancho máximo del contenido */
+    margin: 0 auto; /* Centra horizontalmente el contenedor */
+    margin-bottom: 30px;
+}
+
+/* Estilos para las imágenes de los posts */
+
+/* Imagen de la tarjeta */
+.card-image {
+    width: 100%;
+    height: 300px; /* Altura fija para las imágenes */
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Información meta */
+.post-meta {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 20px; /* Espacio entre meta y título */
+}
+
+.meta-date {
+    font-weight: bold;
+}
+
+.meta-author {
+    text-decoration: none;
+    color: #6f6b6f;
+    transition: color 0.3s ease;
+}
+
+.meta-author:hover {
+    color: #5a565a;
+}
+
+/* Título del post */
+.post-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Contenido del post */
+.post-content {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Sección de etiquetas */
+.tags-section {
+    margin-bottom: 30px; /* Añade margen abajo para separar del contenido anterior */
+    padding-bottom: 20px; /* Añade padding abajo para separar del botón "Volver" */
+}
+
+.tags-section h4 {
+    padding-bottom: 15px;
+}
+
+.tags-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.btn-tag {
+    background-color: #6f6b6f;
+    color: #f9f9f9;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.btn-tag:hover {
+    background-color: #5a565a;
+}
+
+/* Botón */
+.btn {
+    background-color: #6f6b6f;
+    color: #f9f9f9;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+
+.btn:hover {
+    background-color: #6f6b6f;
+}
+
+/* Sección de información */
+.programming-info {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.programming-info h2 {
+    margin-bottom: 20px;
+}
+
+/* Estilos para la página de error */
+
+#error-title {
+    text-align: center;
+}
+
+.error-message {
+    text-align: center;
+    padding: 50px;
+}
+
+.error-message h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.error-message p {
+    font-size: 19px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.error-message .btn {
+    display: inline-block;
+    background-color: #6f6b6f;
+    color: #f9f9f9;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.error-message .btn:hover {
+    background-color: #6f6b6f;
+}
+
+/* Pie de página */
+.footer {
+    background-color: #b1b1b1;
+    color: white; /* Texto blanco */
+    text-align: center;
+    padding: 15px 15px;
+}
+
+.footer p {
+    font-size: 12px;
+}
+
+/* Estilos para la página de error 404 */
+#error-title {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#error-title h2 {
+    font-size: 48px;
+    color: #d9534f; /* Rojo para resaltar el error */
+    margin-bottom: 20px;
+}
+
+.error-message {
+    text-align: center;
+    padding: 50px;
+}
+
+.error-message p {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.error-message .btn {
+    display: inline-block;
+    background-color: #6f6b6f;
+    color: #f9f9f9;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.error-message .btn:hover {
+    background-color: #5a565a;
+}
+
+/* Estilos para la tabla de autores */
+.author-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 100px;
+}
+
+.author-table th,
+.author-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.author-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.author-table .btn {
+    display: inline-block;
+    background-color: #6f6b6f;
+    color: #f9f9f9;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.author-table .btn:hover {
+    background-color: #5a565a;
+}
+
+/* Estilos para Etiquetas */
+.tags-grid .tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio entre etiquetas */
+    justify-content: center; /* Centrar etiquetas horizontalmente */
+    margin-bottom: 30px;
+}
+
+.tag-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #6f6b6f;
+    color: #f9f9f9;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.tag-btn:hover {
+    background-color: #5a565a;
+}
+
+#h2-tags {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Centrar el título */
+#h2-tags-posts h2 {
+    text-align: center;
+}
+
+/* Estilo para el botón "Volver a las etiquetas" */
+.back-to-tags {
+    display: block;
+    background-color: #6f6b6f;
+    color: #f9f9f9;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-align: center; /* Centrar el texto dentro del botón */
+    margin: 0 auto; /* Centrar el botón horizontalmente */
+    margin-left: 600px;
+    margin-right: 600px;
+    margin-bottom: 30px;
+    margin-top: 50px; /* Añadir margen arriba del footer */
+}

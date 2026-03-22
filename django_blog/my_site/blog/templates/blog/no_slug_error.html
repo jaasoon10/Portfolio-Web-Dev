@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="welcome-section" id="error-title">
+    <h2>Error: Slug No Disponible</h2>
+</div>
+
+<section class="error-message">
+    <p>Lo sentimos, este post no tiene un slug asignado.</p>
+    <a href="{% url 'all-posts-page' %}" class="btn">Volver a la lista de posts</a>
+</section>
+{% endblock %}

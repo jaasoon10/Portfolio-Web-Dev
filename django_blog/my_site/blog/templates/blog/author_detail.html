@@ -1,0 +1,45 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<div class="welcome-section">
+    <h2 id="h2-detail">Detalles del Autor: <u>{{ author.first_name }} {{ author.last_name }}</u></h2>
+</div>
+
+<!-- Tabla para Detalles del Autor -->
+<section class="author-info">
+    <h2 id="h2-detail-2">Información del Autor</h2>
+    <table class="author-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo electrónico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ author.first_name }}</td>
+                <td>{{ author.last_name }}</td>
+                <td>{{ author.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Posts Publicados por el Autor -->
+<h2 id="h2-detail-3">Posts publicados por {{ author.first_name }} {{ author.last_name }}</h2>
+<section class="posts-grid">
+    <div class="post-container">
+        {% for post in posts %}
+        <div class="card">
+            <img src="{% static 'blog/images/'|add:post.image %}" alt="{{ post.title }}" class="card-image">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content|truncatewords:20 }}</p>
+            <a href="{% url 'posts-detail-page' post.slug %}" class="btn">Leer más</a>
+        </div>
+        {% empty %}
+        <p>Este autor no ha publicado ningún post todavía.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

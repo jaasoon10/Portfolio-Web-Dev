@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<div class="welcome-section" id="h2-tags-posts">
+    <h2>Listado de todos los posts con la etiqueta {{ tag.caption }}</h2>
+</div>
+<section class="posts-grid">
+    <div class="post-container">
+        {% for post in posts %}
+        <div class="card">
+            <img src="{% static 'blog/images/'|add:post.image %}" alt="{{ post.title }}" class="card-image">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+            <a href="{% url 'posts-detail-page' post.slug %}" class="btn">Leer más</a>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'tags-list' %}" class="btn back-to-tags">Volver a las etiquetas</a>
+</section>
+{% endblock %}
