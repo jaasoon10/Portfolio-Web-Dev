@@ -3,3 +3,7 @@ vendor/
 .env
 __pycache__/
 *.sqlite3
+node_modules/
+dist/
+.angular/
+.env
