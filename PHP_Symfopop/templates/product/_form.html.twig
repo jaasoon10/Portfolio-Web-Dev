@@ -1,0 +1,37 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-12 mb-3">
+            {{ form_label(form.title, 'Títol del producte') }}
+            {{ form_widget(form.title, {'attr': {'class': 'form-control', 'placeholder': 'P. ex. Bicicleta de muntanya'}}) }}
+            {{ form_errors(form.title) }}
+        </div>
+        
+        <div class="col-md-12 mb-3">
+            {{ form_label(form.description, 'Descripció detallada') }}
+            {{ form_widget(form.description, {'attr': {'class': 'form-control', 'rows': 5, 'placeholder': "Descriu l'estat, l'ús i les característiques..."}}) }}
+            {{ form_errors(form.description) }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+            {{ form_label(form.price, 'Preu (€)') }}
+            <div class="input-group">
+                {{ form_widget(form.price, {'attr': {'class': 'form-control'}}) }}
+                <span class="input-group-text">€</span>
+            </div>
+            {{ form_errors(form.price) }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+            {{ form_label(form.image, 'URL de la imatge') }}
+            {{ form_widget(form.image, {'attr': {'class': 'form-control', 'placeholder': 'https://...'}}) }}
+            <small class="text-muted">{{ form_help(form.image) }}</small>
+            {{ form_errors(form.image) }}
+        </div>
+    </div>
+
+    <hr>
+    
+    <div class="text-end">
+        <button class="btn btn-primary btn-lg px-5 shadow-sm">{{ button_label|default('Publicar ara') }}</button>
+    </div>
+{{ form_end(form) }}

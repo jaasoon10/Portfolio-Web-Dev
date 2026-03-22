@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entrar!{% endblock %}
+
+{% block body %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card p-4 shadow-sm">
+            <h1 class="h3 mb-3 font-weight-normal text-center">Identifica't</h1>
+            <form method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                {% if app.user %}
+                    <div class="mb-3 text-center">
+                        Has iniciat sessió com a {{ app.user.userIdentifier }}, <a href="{{ logout_path() }}">Tancar sessió</a>
+                    </div>
+                {% endif %}
+
+                <div class="mb-3">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                </div>
+
+                <div class="mb-3">
+                    <label for="inputPassword" class="form-label">Contrasenya</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                </div>
+
+                <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
+
+                <div class="form-check mb-3">
+                    <input type="checkbox" name="_remember_me" class="form-check-input" id="remember_me">
+                    <label class="form-check-label" for="remember_me">Recorda'm</label>
+                </div>
+
+                <button class="btn btn-lg btn-primary w-100 mt-3" type="submit">
+                    Entrar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

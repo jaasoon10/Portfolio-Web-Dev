@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.title }}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ product.image }}" class="img-fluid rounded shadow w-100" alt="{{ product.title }}" loading="lazy">
+        </div>
+        <div class="col-md-6">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('app_product_index') }}">Productes</a></li>
+                    <li class="breadcrumb-item active">{{ product.title }}</li>
+                </ol>
+            </nav>
+            <h1>{{ product.title }}</h1>
+            <h2 class="text-success my-3">{{ product.price|number_format(2, ',', '.') }} €</h2>
+            <hr>
+            <p class="lead">{{ product.description }}</p>
+            <div class="mt-4 p-3 bg-light rounded">
+                <small class="text-muted d-block">Publicat per: <strong>{{ product.owner.name }}</strong></small>
+                <small class="text-muted">Data: {{ product.createdAt|date('d/m/Y H:i') }}</small>
+            </div>
+            {% if app.user and app.user == product.owner %}
+                <div class="mt-4 p-3 bg-white border border-warning rounded shadow-sm">
+                    <h5 class="text-warning">Accions de propietari</h5>
+                    <div class="d-flex gap-2">
+                        <a href="{{ path('app_product_edit', {slug: product.slug}) }}" class="btn btn-warning">Editar publicació</a>
+                        {{ include('product/_delete_form.html.twig') }}
+                    </div>
+                </div>
+            {% endif %}
+            <a href="{{ path('app_product_index') }}" class="btn btn-secondary mt-4">Tornar al llistat</a>
+        </div>
+    </div>
+{% endblock %}

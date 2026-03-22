@@ -7,3 +7,6 @@ node_modules/
 dist/
 .angular/
 .env
+vendor/
+var/
+.env

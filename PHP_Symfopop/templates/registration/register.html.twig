@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registrar-se{% endblock %}
+
+{% block body %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card p-4 shadow-sm">
+            <h1 class="h3 mb-3 font-weight-normal text-center">Registrar-se</h1>
+
+            {{ form_errors(registrationForm) }}
+
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.name, {
+                    label: 'Nom complet',
+                    attr: {'class': 'form-control mb-3'}
+                }) }}
+                {{ form_row(registrationForm.email, {
+                    label: 'Email',
+                    attr: {'class': 'form-control mb-3'}
+                }) }}
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Contrasenya',
+                    attr: {'class': 'form-control mb-3'}
+                }) }}
+                <div class="form-check mb-3">
+                    {{ form_widget(registrationForm.agreeTerms, {attr: {'class': 'form-check-input'}}) }}
+                    {{ form_label(registrationForm.agreeTerms, 'Accepto els termes i condicions', {label_attr: {'class': 'form-check-label'}}) }}
+                </div>
+
+                <button type="submit" class="btn btn-lg btn-primary w-100 mt-2">Crear compte</button>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
