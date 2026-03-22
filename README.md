@@ -5,22 +5,27 @@ Welcome to my professional portfolio. This repository contains a selection of th
 ## 🚀 Featured Projects
 
 ### 1. PHP Symfony Marketplace (Symfopop)
-* **Tech Stack:** PHP 8.x, Symfony Framework, MySQL, Twig.
-* **Description:** A robust web application built with MVC architecture, featuring database migrations, service containers, and professional routing.
+
+- **Tech Stack:** PHP 8.x, Symfony Framework, MySQL, Twig.
+- **Description:** A robust web application built with MVC architecture, featuring database migrations, service containers, and professional routing.
 
 ### 2. Angular MEAN Stack Application
-* **Tech Stack:** MongoDB, Express.js, Angular, Node.js.
-* **Description:** A full-stack Single Page Application (SPA) demonstrating asynchronous data handling, RESTful API integration, and modular frontend components.
+
+- **Tech Stack:** MongoDB, Express.js, Angular, Node.js.
+- **Description:** A full-stack Single Page Application (SPA) demonstrating asynchronous data handling, RESTful API integration, and modular frontend components.
 
 ### 3. Django Blog System
-* **Tech Stack:** Python, Django, SQLite3.
-* **Description:** A dynamic blogging platform with custom user authentication, post management, and automated documentation generation.
+
+- **Tech Stack:** Python, Django, SQLite3.
+- **Description:** A dynamic blogging platform with custom user authentication, post management, and automated documentation generation.
 
 ## 🛠️ Technical Skills
-* **Backend:** PHP (Symfony/Laravel), Python (Django), Node.js (Express).
-* **Frontend:** Angular, JavaScript (ES6+), TypeScript, HTML5, CSS3.
-* **Databases:** MySQL, MongoDB, SQLite.
-* **Tools:** Git/GitHub, Docker, ERP Management (A3, Innuva).
+
+- **Programming Languages:** JavaScript (ES6+), TypeScript, PHP, Python, HTML5, CSS3.
+- **Frameworks & Libraries:** Node.js, Express.js, Angular, Django, Symfony, Laravel, Bootstrap. (Upcoming: React and Next.js).
+- **Databases:** MySQL, MongoDB, and SQLite.
+- **Tools & DevOps:** Docker, Git, and GitHub.
 
 ---
+
 **Contact:** [jasonokoro4@gmail.com](mailto:jasonokoro4@gmail.com) | Olesa de Montserrat, Barcelona.
