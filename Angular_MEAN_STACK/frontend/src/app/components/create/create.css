@@ -1,0 +1,22 @@
+.bg-purple {
+    background-color: #8e24aa; /* Lila según la imagen */
+    color: white;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+form {
+    max-width: 600px;
+    text-align: left;
+}
+
+.message-success {
+    color: #333; /* Color fosc com a la imatge */
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.message-success a {
+    color: #8e24aa; /* Lila per l'enllaç 'aquí' */
+    text-decoration: underline;
+}

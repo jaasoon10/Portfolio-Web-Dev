@@ -1,0 +1,31 @@
+<div class="container mt-5"> <!-- Contenidor principal centrat i amb marge superior -->
+    <div class="row justify-content-center"> <!-- Reixa centrada horitzontalment -->
+        <div class="col-md-5 login-box p-4 bg-white rounded shadow"> <!-- Caixa de login amb ombra i vora arrodonida -->
+            <h2 class="text-center mb-4">Identifica't</h2> <!-- Títol del formulari -->
+
+            <div *ngIf="status == 'success'" class="alert alert-success"> <!-- Alerta si el login és correcte -->
+                Has entrat correctament! Redirigint...
+            </div>
+
+            <div *ngIf="status == 'error'" class="alert alert-danger"> <!-- Alerta si hi ha un error -->
+                L'email o la contrasenya no són correctes.
+            </div>
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"> <!-- Formulari reactiu vinculat al component -->
+                <div class="mb-3"> <!-- Camp d'entrada per l'email -->
+                    <label class="form-label">Email</label>
+                    <input type="email" formControlName="email" class="form-control" placeholder="admin@admin.com">
+                </div>
+
+                <div class="mb-3"> <!-- Camp d'entrada per la contrasenya -->
+                    <label class="form-label">Contrasenya</label>
+                    <input type="password" formControlName="password" class="form-control" placeholder="password123">
+                </div>
+
+                <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary w-100 py-2"> <!-- Botó d'accés, es bloqueja si el form no és vàlid -->
+                    Entrar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

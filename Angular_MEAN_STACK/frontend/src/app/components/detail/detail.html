@@ -1,0 +1,31 @@
+<div class="container" *ngIf="project()"> <!-- Contenidor visible si el projecte existeix -->
+    <div class="image"> <!-- Secció de la imatge -->
+        <img src="{{url + 'get-image/' + project()?.image}}" *ngIf="project()?.image && project()?.image !== 'null'" /> <!-- Imatge real -->
+        <div class="no-image-placeholder" *ngIf="!project()?.image || project()?.image === 'null'"> <!-- Placeholder si no hi ha imatge -->
+            Sense imatge
+        </div>
+    </div>
+
+    <div class="data"> <!-- Secció de dades del projecte -->
+        <h1>{{project()?.name}}</h1> <!-- Nom títol -->
+        <h3>{{project()?.description}}</h3> <!-- Descripció detallada -->
+        <p><strong>Categoria:</strong> {{project()?.category}}</p> <!-- Categoria -->
+        <p><strong>Llenguatges:</strong> {{project()?.langs}}</p> <!-- Llenguatges -->
+
+        <div class="buttons" *ngIf="!confirm"> <!-- Botons d'acció si no estem en mode confirmació -->
+            <a *ngIf="identity" [routerLink]="['/editar', project()?._id]" class="button-edit">Editar</a> <!-- Botó d'edició (només loguejat) -->
+            <a *ngIf="identity" (click)="setConfirm(true)" class="button-delete">Eliminar</a> <!-- Botó d'esborrat (només loguejat) -->
+            <a [routerLink]="['/projects']" class="button-back">Tornar</a> <!-- Botó per tornar enrere -->
+        </div>
+
+        <div class="confirm" *ngIf="confirm"> <!-- Quadre de confirmació d'esborrat -->
+            <p class="text-danger fw-bold">Segur que vols eliminar el projecte?</p>
+            <button (click)="deleteProject(project()?._id!)" class="button-confirm">Si, Eliminar</button> <!-- Confirmar esborrat -->
+            <button (click)="setConfirm(false)" class="button-cancel">Cancelar</button> <!-- Cancel·lar esborrat -->
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="!project()"> <!-- Missatge mentre es carreguen les dades -->
+    <p>Carregant dades del projecte...</p>
+</div>

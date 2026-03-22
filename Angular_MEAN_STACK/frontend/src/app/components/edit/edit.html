@@ -1,0 +1,68 @@
+<h2>{{ title }}</h2>
+
+<p *ngIf="status == 'success'" class="message-success">
+  Projecte actualitzat correctament, pots veure'l <a [routerLink]="['/detall', save_project._id]">aquí</a>
+</p>
+
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()" class="container mt-4">
+  
+  <div class="mb-3 d-flex align-items-center">
+    <div class="flex-grow-1">
+      <label class="form-label">Nom</label>
+      <input type="text" formControlName="name" class="form-control">
+    </div>
+    <span *ngIf="projectForm.get('name')?.invalid && projectForm.get('name')?.touched" 
+          class="badge bg-purple ms-2 py-2">Cal que posis el nom</span>
+  </div>
+
+  <div class="mb-3 d-flex align-items-center">
+    <div class="flex-grow-1">
+      <label class="form-label">Descripció</label>
+      <textarea formControlName="description" class="form-control"></textarea>
+    </div>
+    <span *ngIf="projectForm.get('description')?.invalid && projectForm.get('description')?.touched" 
+          class="badge bg-purple ms-2 py-2">Cal que posis la descripció</span>
+  </div>
+
+  <div class="mb-3 d-flex align-items-center">
+    <div class="flex-grow-1">
+      <label class="form-label">Categoria</label>
+      <input type="text" formControlName="category" class="form-control">
+    </div>
+    <span *ngIf="projectForm.get('category')?.invalid && projectForm.get('category')?.touched" 
+          class="badge bg-purple ms-2 py-2">Cal que posis la categoria</span>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Any</label>
+    <input type="number" formControlName="year" class="form-control">
+  </div>
+
+  <div class="mb-3 d-flex align-items-center">
+    <div class="flex-grow-1">
+      <label class="form-label">Llenguatges Utilitzats</label>
+      <input type="text" formControlName="langs" class="form-control">
+    </div>
+    <span *ngIf="projectForm.get('langs')?.invalid && projectForm.get('langs')?.touched" 
+          class="badge bg-purple ms-2 py-2">Cal que posis els llenguatges</span> 
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Imatge actual</label>
+    <div *ngIf="project && project.image && project.image !== 'null'" class="mb-2">
+      <img src="{{url + 'get-image/' + project.image}}" style="width: 150px;" class="img-thumbnail">
+    </div>
+    <label class="form-label">Substituir imatge (opcional)</label>
+    <input type="file" (change)="onChange($event)" class="form-control">
+    <span *ngIf="fileError" class="badge bg-danger mt-1 py-1 px-2 d-inline-block">{{ fileError }}</span>
+  </div>
+
+  <div *ngIf="loading" class="mt-3">
+    <h3 class="text-primary">Loading ...</h3>
+  </div>
+
+  <button type="submit" [disabled]="projectForm.invalid" class="btn btn-primary mt-3">
+    Enviar Canvis
+  </button>
+
+</form>

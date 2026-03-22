@@ -1,0 +1,63 @@
+<h2>{{ title }}</h2> <!-- Títol dinàmic segons si és crear o editar -->
+
+<p *ngIf="status == 'success'" class="message-success"> <!-- Missatge d'èxit si es desa correctament -->
+  Projecte creat correctament, pots veure'l <a [routerLink]="['/detall', save_project._id]">aquí</a>
+</p>
+
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()" class="container mt-4"> <!-- Formulari reactiu amb vincle a onSubmit -->
+  
+  <div class="mb-3 d-flex align-items-center"> <!-- Camp per al nom -->
+    <div class="flex-grow-1">
+      <label class="form-label">Nom</label>
+      <input type="text" formControlName="name" class="form-control">
+    </div>
+    <span *ngIf="projectForm.get('name')?.invalid && projectForm.get('name')?.touched" 
+          class="badge bg-purple ms-2 py-2">Cal que posis el nom</span> <!-- Validació del nom -->
+  </div>
+
+  <div class="mb-3 d-flex align-items-center"> <!-- Camp per a la descripció -->
+    <div class="flex-grow-1">
+      <label class="form-label">Descripció</label>
+      <textarea formControlName="description" class="form-control"></textarea>
+    </div>
+    <span *ngIf="projectForm.get('description')?.invalid && projectForm.get('description')?.touched" 
+          class="badge bg-purple ms-2 py-2">Cal que posis la descripció</span> <!-- Validació de descripció -->
+  </div>
+
+  <div class="mb-3 d-flex align-items-center"> <!-- Camp per a la categoria -->
+    <div class="flex-grow-1">
+      <label class="form-label">Categoria</label>
+      <input type="text" formControlName="category" class="form-control">
+    </div>
+    <span *ngIf="projectForm.get('category')?.invalid && projectForm.get('category')?.touched" 
+          class="badge bg-purple ms-2 py-2">Cal que posis la categoria</span> <!-- Validació de categoria -->
+  </div>
+
+  <div class="mb-3"> <!-- Camp per a l'any -->
+    <label class="form-label">Any</label>
+    <input type="number" formControlName="year" class="form-control">
+  </div>
+
+  <div class="mb-3 d-flex align-items-center"> <!-- Camp per als llenguatges -->
+    <div class="flex-grow-1">
+      <label class="form-label">Llenguatges Utilitzats</label>
+      <input type="text" formControlName="langs" class="form-control">
+    </div>
+    <span *ngIf="projectForm.get('langs')?.invalid && projectForm.get('langs')?.touched" 
+          class="badge bg-purple ms-2 py-2">Cal que posis la categoria</span> </div> <!-- Validació de llenguatges -->
+
+  <div class="mb-3"> <!-- Camp per pujar la imatge -->
+    <label class="form-label">Imatge del Projecte</label>
+    <input type="file" (change)="onChange($event)" class="form-control"> <!-- Escolta el canvi per validar format -->
+    <span *ngIf="fileError" class="badge bg-danger mt-1 py-1 px-2 d-inline-block">{{ fileError }}</span> <!-- Error si no és imatge -->
+  </div>
+
+  <div *ngIf="loading" class="mt-3"> <!-- Indicador de càrrega mentre puja la imatge -->
+    <h3 class="text-primary">Loading ...</h3>
+  </div>
+
+  <button type="submit" [disabled]="projectForm.invalid" class="btn btn-primary mt-3"> <!-- Botó d'enviament, deshabilitat si el form és invàlid -->
+    Enviar
+  </button>
+
+</form>

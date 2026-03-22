@@ -1,0 +1,22 @@
+<header class="navbar-dark bg-dark shadow-sm"> <!-- Capçalera de la pàgina amb estils foscos -->
+  <nav class="container d-flex justify-content-center py-3"> <!-- Barra de navegació centrada -->
+    <ul class="nav nav-pills"> <!-- Llista d'elements de navegació -->
+      <li class="nav-item"><a routerLink="/about" class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">ABOUT</a></li> <!-- Enllaç a Sobre Nosaltres -->
+      <li class="nav-item"><a routerLink="/projects" class="nav-link text-white" routerLinkActive="active">PROJECTES</a></li> <!-- Enllaç al llistat de projectes -->
+      <li class="nav-item mx-4"><h2 class="text-white m-0">M6</h2></li> <!-- Títol central del projecte -->
+      <li class="nav-item" *ngIf="identity"><a routerLink="/create-project" class="nav-link text-white" routerLinkActive="active">CREAR</a></li> <!-- Botó de crear projecte, visible només si està identificat -->
+      <li class="nav-item"><a routerLink="/contact" class="nav-link text-white" routerLinkActive="active">CONTACTE</a></li> <!-- Enllaç a Contacte -->
+      
+      <li class="nav-item" *ngIf="!identity"><a routerLink="/login" class="nav-link text-white" routerLinkActive="active">LOGIN</a></li> <!-- Botó de Login, visible només si NO està identificat -->
+      <li class="nav-item" *ngIf="identity"><a (click)="logout()" class="nav-link text-white" style="cursor: pointer;">SORTIR</a></li> <!-- Botó de tancar sessió, visible només si està identificat -->
+    </ul>
+  </nav>
+</header>
+
+<main class="container shadow p-5 my-5 bg-white rounded main-box"> <!-- Contingut principal amb ombra i fons blanc -->
+  <router-outlet></router-outlet> <!-- On es carreguen els components segons la ruta -->
+</main>
+
+<footer class="text-center py-4 text-muted"> <!-- Peu de pàgina centrat -->
+  <p>2n DAW M6-UF3 - Projecte Angular v19 - [Jason Okoro]</p> <!-- Crèdits de l'alumne -->
+</footer>

@@ -1,0 +1,26 @@
+<div class="container"> <!-- Contenidor principal de la pàgina -->
+    <h2>Projectes</h2> <!-- Títol de la secció -->
+
+    <ul id="project-list"> <!-- Llista de projectes -->
+        @for (project of projects(); track project._id) { <!-- Bucle per recórrer cada projecte (nou flux d'Angular) -->
+            <li class="project-item"> <!-- Element de llista per a cada projecte -->
+                <a [routerLink]="['/detall', project._id]" class="text-decoration-none text-dark"> <!-- Enllaç al detall del projecte -->
+                    <div class="image-container"> <!-- Contenidor de la imatge -->
+                        @if (project.image && project.image !== 'null') { <!-- Si el projecte té imatge -->
+                            <img src="{{url+'get-image/'+project.image}}" [alt]="project.name" /> <!-- Mostra la imatge des de l'API -->
+                        } @else { <!-- Si no en té -->
+                            <div class="no-image">En construcció</div> <!-- Text de substitució -->
+                        }
+                    </div>
+
+                    <div class="project-data"> <!-- Dades descriptives del projecte -->
+                        <h3>{{project.name}}</h3> <!-- Nom del projecte -->
+                        <p>{{project.langs}}</p> <!-- Llenguatges utilitzats -->
+                    </div>
+                </a>
+            </li>
+        } @empty { <!-- Si la llista de projectes està buida -->
+            <p>No hi han projectes</p> <!-- Missatge informatiu -->
+        }
+    </ul>
+</div>

@@ -1,0 +1,26 @@
+/* Estil per al fons amb patró (simulat) */
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #e9ecef;
+  /* Pots posar una imatge de fons aquí per clavar la captura */
+  background-image: radial-gradient(#dee2e6 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Ajustos de la caixa central */
+.main-box {
+  min-height: 60vh;
+  border-top: 5px solid #6f42c1; /* Opcional: línia lila decorativa */
+}
+
+/* Estil per a l'enllaç actiu al menú */
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  font-weight: bold;
+}
+
+header {
+    /* Color fosc segons la imatge */
+    background-color: #3e3e4a !important; 
+}

@@ -1,0 +1,11 @@
+{
+  "name": "projecte-mean-root",
+  "version": "1.0.0",
+  "scripts": {
+    "i-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "start": "concurrently \"cd backend && npm run start\" \"cd frontend && npm run start\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
