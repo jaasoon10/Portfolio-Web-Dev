@@ -24,7 +24,7 @@ Welcome to my professional portfolio. This repository contains a selection of th
 - **Programming Languages:** JavaScript (ES6+), TypeScript, PHP, Python, HTML5, CSS3.
 - **Frameworks & Libraries:** Node.js, Express.js, Angular, Django, Symfony, Laravel, Bootstrap. (Upcoming: React and Next.js).
 - **Databases:** MySQL, MongoDB, and SQLite.
-- **Tools & DevOps:** Docker, Git, and GitHub.
+- **Tools & DevOps:** Docker, Kubernetes, Jenkins, Git, and GitHub.
 
 ---
 
@@ -54,7 +54,7 @@ Bienvenido a mi portafolio profesional. Este repositorio contiene una selección
 - **Lenguajes de Programación:** JavaScript (ES6+), TypeScript, PHP, Python, HTML5, CSS3.
 - **Frameworks y Librerías:** Node.js, Express.js, Angular, Django, Symfony, Laravel, Bootstrap. (Próximamente: React y Next.js).
 - **Bases de Datos:** MySQL, MongoDB y SQLite.
-- **Herramientas y DevOps:** Docker, Git y GitHub.
+- **Herramientas y DevOps:** Docker, Kubernetes, Jenkins, Git y GitHub.
 
 ---
 
